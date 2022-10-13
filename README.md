@@ -9,6 +9,7 @@ In the project directory, you can run:
 ### `npx create-react-app my-app`
 ### `npm install @mui/material @emotion/react @emotion/styled` 
 ### `npm start`
+### `npm add react-router-dom`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

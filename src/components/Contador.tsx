@@ -42,7 +42,7 @@ const Contador = () => {
             <div>Meu mês de aniversário é: {contador}</div>
             {contadorAux &&
                 <Alert severity="error">{mensagem}</Alert>
-            }
+            } 
             <Button onClick={aumentaMes}>Adicionar mês</Button>
             <Button onClick={diminuiMes}>Diminuir mês</Button>
             <Button onClick={multiMes}>Multiplicar mês</Button>

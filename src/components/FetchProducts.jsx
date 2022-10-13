@@ -1,10 +1,13 @@
-import { Alert, Card } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 
 const FetchProducts = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,29 +31,48 @@ const FetchProducts = () => {
   }, []);
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} xs={12}>
       {isLoading ? (
-        <Alert>Carregando</Alert>
+        <div>Carregando</div>
       ) : (
         data.map((produto) => (
-          <Grid xs={2}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={produto.thumbmail}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+          <Grid
+            item
+            sx={6}
+            xs={4}
+            md={4}
+            lg={2}
+            display="flex"
+            alignItems="stretch"
+          >
+            <Card
+              key={produto.id}
+              style={{
+                height: "100%",
+                display: "flex",
+                alignItems: "stretch",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="140"
+                image={produto.thumbnail}
+                alt={produto.brand}
+              />
+              <CardContent style={{ display: "flex", flexGrow: 1 }}>
+                <Typography gutterBottom variant="h5" component="div">
                   {produto.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
                   {produto.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Compartilhar</Button>
+                <Button size="small">Conheça mais</Button>
+              </CardActions>
             </Card>
           </Grid>
         ))
