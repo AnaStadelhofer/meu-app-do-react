@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 
 const  Root = () => {
     return (
@@ -6,9 +7,14 @@ const  Root = () => {
                 <h1>Menu</h1>
                 <nav>
                     <ul>
-                        <li><a href={'contacts/1'}></a>GAY</li>
+                        <li><a href={'/'}>Inicial</a></li>
+                        <li><a href={'/noticias/'}>Noticias</a></li>
+                        <li><a href={'/produto/'}>Produtos</a></li>
                     </ul>
                 </nav>
+            </div>
+            <div id="detail">
+                <Outlet />
             </div>
         </>
     )

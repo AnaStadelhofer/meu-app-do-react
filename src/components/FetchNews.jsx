@@ -1,18 +1,9 @@
 import { Card, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
-/*
-{
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  },
-*/
-
 const FetchNews = () => {
   const [news, setNews] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   useEffect(() => {
@@ -22,20 +13,30 @@ const FetchNews = () => {
       .then((data) => {
         setNews(data);
         setIsLoading(false);
-        console.log(news);
       });
   }, []);
 
   return (
-    <div>
+    <div style={{maxWidth:"70rem", margin:"0 auto"}}>
+      <h1>Notícias</h1>
       {isLoading ? (
         <CircularProgress />
       ) : (
         news.map((noticia) => (
-          <div key={noticia.id}>
-            <div>{noticia.title}</div>
-            <div>{noticia.body}</div>
-          </div>
+          <Card
+            variant="outlined"
+            style={{
+              marginBottom: "1rem",
+              textAlign: "left",
+              padding: "1rem",
+              borderRadius: "2rem"
+            }}
+          >
+            <div key={noticia.id}>
+              <h2>{noticia.title}</h2>
+              <div>{noticia.body}</div>
+            </div>
+          </Card>
         ))
       )}
     </div>
