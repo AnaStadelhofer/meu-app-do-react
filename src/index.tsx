@@ -1,30 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Root from './routes/root';
-import { BrowserRouter, createBrowserRouter, Outlet, Route, Routes, RouterProvider } from 'react-router-dom';
-import ErrorPage from './components/ErrorPage';
-import FetchNews from './components/FetchNews';
-import FetchProducts from './components/FetchProducts';
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
-          <Route path="noticias" element={<FetchNews />}></Route>
-          <Route path="produto" element={<FetchProducts />}></Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    
+    <Root />
   </React.StrictMode>
 );
 
