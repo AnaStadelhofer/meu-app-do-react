@@ -10,6 +10,7 @@ In the project directory, you can run:
 ### `npm install @mui/material @emotion/react @emotion/styled` 
 ### `npm start`
 ### `npm add react-router-dom`
+### `npm add @mui/icons-material`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
