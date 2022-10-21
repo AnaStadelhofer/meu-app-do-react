@@ -46,7 +46,7 @@ export const PageLayout = () => {
           </ListItem>
           <ListItem>
           <ListItemButton component="a" href="/SignIn">
-              <ListItemText primary={"SignIn"}></ListItemText>
+              <ListItemText primary={"Login"}></ListItemText>
             </ListItemButton>
           </ListItem>
         </List>
