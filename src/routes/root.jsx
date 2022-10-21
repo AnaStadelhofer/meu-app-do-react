@@ -4,6 +4,7 @@ import ErrorPage from "../components/ErrorPage";
 import FetchNews from "../components/FetchNews";
 import FetchProducts from "../components/FetchProducts";
 import { PageLayout } from "../components/PageLayout";
+import SignIn from "../components/SignIn";
 
 const route = createBrowserRouter(
     createRoutesFromElements(
@@ -11,6 +12,7 @@ const route = createBrowserRouter(
             <Route path="noticia" element={<FetchNews />}></Route>
             <Route path="produto" element={<FetchProducts />}></Route>
             <Route path="contador" element={<Contador />}></Route>
+            <Route path="SignIn" element={<SignIn />}></Route>
         </Route>     
     )
 )
